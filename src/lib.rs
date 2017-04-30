@@ -18,11 +18,11 @@ extern crate notify_rust;
 use notify_rust::Notification;
 use notify_rust::hints::NotificationHint;
 
-pub struct NotifyDrain{
+pub struct Notify{
     name: &'static str
 }
 
-impl slog::Drain for NotifyDrain{
+impl slog::Drain for Notify{
     type Err = String;
     type Ok = ();
     
@@ -47,8 +47,8 @@ impl slog::Drain for NotifyDrain{
     }
 }
 
-pub fn simple(name: &'static str) -> NotifyDrain {
-    NotifyDrain{
+pub fn simple(name: &'static str) -> Notify {
+    Notify{
         name: name
     }
 }
